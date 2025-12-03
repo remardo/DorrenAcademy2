@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
@@ -43,9 +44,12 @@ export const Hero: React.FC<HeroProps> = ({ onStartClick }) => {
                 Начать обучение
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <a href="#program" className="border border-dorren-dark/20 text-dorren-dark px-8 py-3.5 rounded-md font-semibold text-center hover:bg-white hover:border-dorren-dark transition-colors">
+              <button 
+                onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-dorren-dark/20 text-dorren-dark px-8 py-3.5 rounded-md font-semibold text-center hover:bg-white hover:border-dorren-dark transition-colors"
+              >
                 Посмотреть программу
-              </a>
+              </button>
             </div>
 
             <p className="text-xs text-gray-500 mt-2">
@@ -87,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartClick }) => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 animate-bounce cursor-pointer" onClick={() => document.getElementById('why')?.scrollIntoView()}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 animate-bounce cursor-pointer" onClick={() => document.getElementById('why')?.scrollIntoView({ behavior: 'smooth' })}>
           <span className="text-xs font-medium uppercase tracking-widest">Листайте вниз</span>
           <ChevronDown size={20} />
         </div>

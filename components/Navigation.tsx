@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, Home } from 'lucide-react';
 import { NAV_ITEMS } from '../data';
@@ -32,19 +25,6 @@ export const Header: React.FC<HeaderProps> = ({ onStartClick }) => {
           <span className="text-2xl font-bold tracking-tight text-dorren-dark">DORREN</span>
         </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <a 
-              key={item.href} 
-              href={item.href} 
-              className="text-sm font-medium text-gray-600 hover:text-dorren-dark transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
         {/* CTA Button */}
         <div className="hidden md:block">
           <button onClick={onStartClick} className="bg-dorren-dark text-white px-6 py-2.5 rounded text-sm font-semibold hover:bg-opacity-90 transition-all">
@@ -64,16 +44,6 @@ export const Header: React.FC<HeaderProps> = ({ onStartClick }) => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-4 md:hidden flex flex-col gap-4 shadow-lg">
-          {NAV_ITEMS.map((item) => (
-            <a 
-              key={item.href} 
-              href={item.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium text-gray-800 py-2 border-b border-gray-50"
-            >
-              {item.label}
-            </a>
-          ))}
           <button onClick={() => { onStartClick(); setMobileMenuOpen(false); }} className="bg-dorren-dark text-white px-4 py-3 rounded text-center font-semibold mt-2 w-full">
             Начать обучение
           </button>

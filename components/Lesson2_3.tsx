@@ -369,9 +369,10 @@ export const Lesson2_3: React.FC<LessonProps> = ({ onBack, onNavigate }) => {
            </ul>
            <div className="text-center">
              <button 
-               className="bg-gray-300 text-gray-500 px-6 py-2 rounded-lg font-bold cursor-not-allowed flex items-center gap-2 mx-auto"
+               onClick={() => onNavigate('lesson3.1')}
+               className="bg-dorren-dark text-white px-6 py-2 rounded-lg font-bold hover:bg-opacity-90 flex items-center gap-2 mx-auto"
              >
-                Следующий урок: Конструкция (Скоро)
+                Следующий урок: Конструкция полотна
                 <ArrowRight size={16} />
              </button>
              <p className="text-xs text-gray-400 mt-2">Модуль 3: Технический конструктив</p>

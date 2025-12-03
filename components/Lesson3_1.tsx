@@ -718,8 +718,8 @@ export const Lesson3_1: React.FC<LessonProps> = ({ onBack, onNavigate }) => {
            </ul>
            <div className="text-center">
              <button 
-               className="bg-gray-300 text-gray-500 px-6 py-2 rounded-lg font-bold cursor-not-allowed flex items-center gap-2 mx-auto"
-               title="Следующий урок в разработке"
+               onClick={() => onNavigate('lesson3.2')}
+               className="bg-dorren-dark text-white px-6 py-2 rounded-lg font-bold hover:bg-opacity-90 transition-all flex items-center gap-2 mx-auto"
              >
                 Следующий урок: Короба и притворы
                 <ChevronRight size={16} />
