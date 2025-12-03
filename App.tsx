@@ -31,14 +31,17 @@ import { Lesson6_1 } from './components/Lesson6_1';
 import { Lesson6_2 } from './components/Lesson6_2';
 import { Lesson6_3 } from './components/Lesson6_3';
 
+type ViewType = 'landing' | 'lesson1.1' | 'lesson1.2' | 'lesson1.3' | 'lesson2.1' | 'lesson2.2' | 'lesson2.3' | 'lesson3.1' | 'lesson3.2' | 'lesson3.3' | 'lesson3.4' | 'lesson4.1' | 'lesson4.2' | 'lesson4.3' | 'lesson5.1' | 'lesson5.2' | 'lesson5.3' | 'lesson6.1' | 'lesson6.2' | 'lesson6.3';
+
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'landing' | 'lesson1.1' | 'lesson1.2' | 'lesson1.3' | 'lesson2.1' | 'lesson2.2' | 'lesson2.3' | 'lesson3.1' | 'lesson3.2' | 'lesson3.3' | 'lesson3.4' | 'lesson4.1' | 'lesson4.2' | 'lesson4.3' | 'lesson5.1' | 'lesson5.2' | 'lesson5.3' | 'lesson6.1' | 'lesson6.2' | 'lesson6.3'>('landing');
+  const [currentView, setCurrentView] = useState<ViewType>('landing');
 
   const handleNavigate = (view: string) => {
     window.scrollTo(0, 0);
     // Simple validation for type safety
-    if (view === 'landing' || view.startsWith('lesson')) {
-      setCurrentView(view as any);
+    const validViews: ViewType[] = ['landing', 'lesson1.1', 'lesson1.2', 'lesson1.3', 'lesson2.1', 'lesson2.2', 'lesson2.3', 'lesson3.1', 'lesson3.2', 'lesson3.3', 'lesson3.4', 'lesson4.1', 'lesson4.2', 'lesson4.3', 'lesson5.1', 'lesson5.2', 'lesson5.3', 'lesson6.1', 'lesson6.2', 'lesson6.3'];
+    if (validViews.includes(view as ViewType)) {
+      setCurrentView(view as ViewType);
     } else {
       setCurrentView('landing');
     }
